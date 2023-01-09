@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  webserver:
+    build:
+      context: ./bin/webserver
+    container_name: 'sandbox'
+    restart: 'always'
+    ports:
+      - "8081:80"
+      - "8091:443"
+    volumes:
+      - ../sandbox:/var/taskmasterpro/sandbox
+      - ${DOCUMENT_ROOT-../default/www}:/var/www/
+    environment:
+      XDEBUG_CONFIG: remote_host=host.docker.internal
+
+  mysql:
+    build: ./bin/mysql
+    container_name: 'sql.taskmasterpro.com'
+    restart: 'always'
+    ports:
+      - "3306:3306"
+    volumes:
+      - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: GcCxCM4g3^PVsoRG?MGm
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8050:8080

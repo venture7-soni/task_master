@@ -1,0 +1,13 @@
+[mysqld]
+innodb_file_per_table=1
+innodb_file_format=Barracuda
+innodb_file_format_max=Barracuda
+innodb_flush_method=O_DIRECT
+innodb_log_file_size=1G
+innodb_buffer_pool_size=40G
+innodb_thread_concurrency=0
+innodb_read_io_threads=64
+innodb_write_io_threads=64
+innodb_autoinc_lock_mode=2
+innodb_flush_log_at_trx_commit=0
+innodb_doublewrite=1

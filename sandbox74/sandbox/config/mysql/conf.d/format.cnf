@@ -1,0 +1,4 @@
+[mysqld]
+binlog_format=ROW
+default_storage_engine=innodb
+
