@@ -62,6 +62,24 @@ password <from docker-compose.yml>
  pecl install apcu  
  docker-php-ext-enable apcu  
  service apache2 reload
+* Install GD  
+ docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/  
+ docker-php-ext-install -j$(nproc) gd
+* Install mysql client  
+ apt-get install default-mysql-client  
+* Install node  
+ curl -fsSL https://deb.nodesource.com/setup_19.x | bash - && apt-get -y install nodejs  
+* Install grunt  
+ npm install -g grunt-cli
+* Install ruby compss sass  
+ apt-get install ruby-full  
+ gem install bundler  
+ gem install compass  
+ gem install sass  
+ gem install bootstrap-sass  
+ 
+ 
+ 
  
 
 
