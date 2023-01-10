@@ -50,7 +50,15 @@ password <from docker-compose.yml>
 * Verify webserver 
   http://localhost:8081/
 * PHPinfo http://localhost:8081/phpin.php
+
+* login to sandbox with your cmd using following command 
+ docker exec -it sandbox bash
+* Install mcrypt
+ pecl install mcrypt
+ docker-php-ext-enable mcrypt
+ service apache2 reload
+*  
  
- 
+
 
 
