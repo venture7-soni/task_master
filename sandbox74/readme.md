@@ -49,5 +49,8 @@ password <from docker-compose.yml>
 
 * Verify webserver 
   http://localhost:8081/
+* PHPinfo http://localhost:8081/phpin.php
+ 
+ 
 
 
