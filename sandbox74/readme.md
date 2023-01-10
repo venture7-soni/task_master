@@ -58,8 +58,12 @@ password <from docker-compose.yml>
  gem install bootstrap-sass  
 * Downgrade composer to 1.x  
  composer self-update --1
- 
- 
+* TaskMasterPro specific config changes  
+cd /var/taskmasterpro/sa
+* You should be able to login to mysql without and credentials now  
+![image](https://user-images.githubusercontent.com/104414289/211586181-95d2594a-b096-4a57-9cc7-d1cbf7460f19.png)  
+
+
  
 
 
