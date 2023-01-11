@@ -71,7 +71,15 @@ cd /var/taskmasterpro/sa
  This will create necessary database, database users and config.  
 * Import latest db dumps.  
  copy db dumps to sandbox folder and then do the import  
- ![image](https://user-images.githubusercontent.com/104414289/211758008-7df7b4bd-4d48-419a-a5cf-1138e4a5c257.png)
+ ![image](https://user-images.githubusercontent.com/104414289/211758008-7df7b4bd-4d48-419a-a5cf-1138e4a5c257.png)  
+ * TODO: Everything below should go into some local build script
+ * From docker terminal, tmp folder, do npm install  
+ npm install  
+ ![image](https://user-images.githubusercontent.com/104414289/211765430-ea83a28d-ad10-46e9-b65c-27942f529637.png)
+ * From docker terminal, tmp/laravel folder, do npm install  
+ npm install  
+ ![image](https://user-images.githubusercontent.com/104414289/211769241-fabef5fb-9288-4f5c-a3a5-40ff5397a9f2.png)  
+ *
 
 
  
