@@ -79,7 +79,23 @@ cd /var/taskmasterpro/sa
  * From docker terminal, tmp/laravel folder, do npm install  
  npm install  
  ![image](https://user-images.githubusercontent.com/104414289/211769241-fabef5fb-9288-4f5c-a3a5-40ff5397a9f2.png)  
- *
+ * From docker terminal, tmp/code, do composer install  
+ /usr/local/bin/composer install --optimize-autoloader --no-progress --no-dev  
+ ![image](https://user-images.githubusercontent.com/104414289/211790328-79008e67-46c7-4139-b17c-70e3aa90f755.png)
+ * From docker terminal, tmp/laravel, do composer install  
+ /usr/local/bin/composer install --optimize-autoloader --no-progress --no-dev  
+ ![image](https://user-images.githubusercontent.com/104414289/211794748-5c0b2482-0162-4766-b075-a1860ef0c4e9.png)
+ * From docker terminal, tmp/laravel, run following commands:  
+        php artisan key:generate  
+        php artisan config:cache  
+        php artisan config:clear  
+ * FROM docker terminal, tmp/, run grunt  
+   grunt compass:dev  
+ ![image](https://user-images.githubusercontent.com/104414289/211796052-977745f3-0977-4228-b085-e83a833a0644.png)
+ * From gitbash terminal, run  
+ npm run dev
+ ![image](https://user-images.githubusercontent.com/104414289/211796504-30bb849c-2374-47ad-bcb5-f636bfda543f.png)
+
 
 
  
