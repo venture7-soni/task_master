@@ -62,6 +62,20 @@ password <from docker-compose.yml>
 cd /var/taskmasterpro/sa
 * You should be able to login to mysql without and credentials now  
 ![image](https://user-images.githubusercontent.com/104414289/211586181-95d2594a-b096-4a57-9cc7-d1cbf7460f19.png)  
+* Clone tmp repo in sandbox directory with gitbash  
+ git clone https://github.com/TaskMasterPro/tmp  
+ ![image](https://user-images.githubusercontent.com/104414289/211746087-4d27d95a-2f9d-4c84-b00c-9110a97f1374.png)
+* Run setup.sh from docker sandbox bash  
+ ./setup.sh  
+ ![image](https://user-images.githubusercontent.com/104414289/211754432-afb8720a-cc41-4dd9-a74c-46c3fd0f96e3.png)  
+ This will create necessary database, database users and config.  
+* Import latest db dumps.  
+ copy db dumps to sandbox folder and then do the import  
+ ![image](https://user-images.githubusercontent.com/104414289/211758008-7df7b4bd-4d48-419a-a5cf-1138e4a5c257.png)
+
+
+ 
+ 
 
 
  
