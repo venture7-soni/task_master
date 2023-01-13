@@ -1,4 +1,5 @@
-
 {
-  "DB_SERVER_PASSWORD":"Tqs9z/xAqLpmYqiRb4{A"
+  "DB_SERVER_PASSWORD":"Tqs9z/xAqLpmYqiRb4{A",
+  "SQL_GLOBAL_HOST":"sql.taskmasterpro.com",
+  "SQL_HOST":"sql.taskmasterpro.com"
 }

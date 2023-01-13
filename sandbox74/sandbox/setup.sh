@@ -1,4 +1,19 @@
 #!/bin/bash
+
+# DB specific
+mysql -e "DROP DATABASE IF EXISTS sandbox;"
+mysql -e "DROP DATABASE IF EXISTS settings_sandbox;"
+mysql -e "DROP DATABASE IF EXISTS tmp_global;"
+mysql -e "DROP USER IF EXISTS sandboxuser@localhost;"
+mysql -e "DROP USER IF EXISTS globaluser@localhost;"
+
+mysql -e "CREATE DATABASE sandbox;"
+mysql -e "CREATE DATABASE settings_sandbox;"
+mysql -e "CREATE DATABASE tmp_global;"
+mysql -e "GRANT ALL PRIVILEGES ON sandbox.* TO 'sandboxuser'@'%' IDENTIFIED BY 'Tqs9z/xAqLpmYqiRb4{A';"
+mysql -e "GRANT ALL PRIVILEGES ON *.* TO 'globaluser'@'%' IDENTIFIED BY 'dYJ+c&iGD1=Arg8B3Y\$1';"
+mysql -e "FLUSH PRIVILEGES;"
+
 cd ~
 cp /var/taskmasterpro/sandbox/config/home/.my.cnf .my.cnf
 cp /var/taskmasterpro/sandbox/config/apache/phperror_log /etc/logrotate.d/phperror_log
@@ -16,7 +31,7 @@ cp /var/taskmasterpro/sandbox/config/apache/local/ssl-vhost.conf /etc/apache2/co
 cp /var/taskmasterpro/sandbox/config/apache/local/vhost-defaults.conf /etc/apache2/conf-available/vhost-defaults.conf
 cp /var/taskmasterpro/sandbox/config/apache/local/vhost-https-redirect.conf /etc/apache2/conf-available/vhost-https-redirect.conf
 cp /var/taskmasterpro/sandbox/config/apache/local/vhost-tmp-redirects.conf /etc/apache2/conf-available/vhost-tmp-redirects.conf
-mkdir /etc/apache2/ssl
+mkdir -p /etc/apache2/ssl
 cp /var/taskmasterpro/sandbox/config/apache/ssl/local/server.key /etc/apache2/ssl/server.key
 cp /var/taskmasterpro/sandbox/config/apache/ssl/local/STAR.TASKMASTERPRO.COM.crt /etc/apache2/ssl/STAR.TASKMASTERPRO.COM.crt
 chmod -R 400 /etc/apache2/ssl/
@@ -33,19 +48,17 @@ cp /var/taskmasterpro/sandbox/config/apache/php.ini /usr/local/etc/php/
 # npm and nodejs  handle - later
 
 # composer
-php -r "copy('https://getcomposer.org/installer', '/tmp/composer-setup.php');"
-php /tmp/composer-setup.php --install-dir=/usr/local/bin/ --filename=composer --version=1.10.16
-rm /tmp/composer-setup.php
+#php -r "copy('https://getcomposer.org/installer', '/tmp/composer-setup.php');"
+#php /tmp/composer-setup.php --install-dir=/usr/local/bin/ --filename=composer --version=1.10.16
+#rm /tmp/composer-setup.php
 composer global require nategood/httpful
+
+#code env
+cp /var/taskmasterpro/sandbox/config/code/.env /var/taskmasterpro/sandbox/tmp/code/.env
 
 #laravel
 cd ~
 cp /var/taskmasterpro/sandbox/config/laravel/local/.env /var/taskmasterpro/sandbox/tmp/laravel/.env
-
-cd /var/taskmasterpro/sandbox/tmp/laravel/
-php artisan key:generate
-php artisan config:cache
-php artisan config:clear
 
 #apache
 a2enconf filetypes
@@ -63,3 +76,7 @@ a2enmod rewrite
 a2enmod ssl
 
 service apache2 reload
+
+#attachment
+mkdir -p /var/qmrp && chmod -R 777 /var/qmrp
+mkdir -p /var/qmrp/do_spaces_temp_downloads && chmod -R 777 /var/qmrp/do_spaces_temp_downloads

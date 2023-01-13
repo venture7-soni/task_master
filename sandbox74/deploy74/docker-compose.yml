@@ -13,7 +13,8 @@ services:
       - ../sandbox:/var/taskmasterpro/sandbox
       - ${DOCUMENT_ROOT-../default/www}:/var/www/
     environment:
-      XDEBUG_CONFIG: remote_host=host.docker.internal
+      - XDEBUG_CONFIG="client_host=host.docker.internal"
+      - TZ=America/Denver
 
   mysql:
     build: ./bin/mysql
@@ -24,8 +25,9 @@ services:
     volumes:
       - ${MYSQL_DATA_DIR-./data/mysql}:/var/lib/mysql
     environment:
-      MYSQL_ROOT_PASSWORD: GcCxCM4g3^PVsoRG?MGm
-
+      - MYSQL_ROOT_PASSWORD=GcCxCM4g3^PVsoRG?MGm
+      - TZ=US/Central
+    command: mysqld --sql_mode="NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION" --innodb_strict_mode="OFF"
   adminer:
     image: adminer
     restart: always
