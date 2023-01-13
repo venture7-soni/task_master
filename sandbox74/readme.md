@@ -95,8 +95,14 @@ cd /var/taskmasterpro/sa
  * From gitbash terminal, run  
  npm run dev
  ![image](https://user-images.githubusercontent.com/104414289/211796504-30bb849c-2374-47ad-bcb5-f636bfda543f.png)
+* To enable Xdebug 3, add the following lines at the end of 	/usr/local/etc/php/php.ini  
+ xdebug.mode=develop,debug  
+ xdebug.client_host=host.docker.internal
 
-
+ **Troubleshooting:**
+ * If you run from containers from docker desktop, all the logs are outputed to the screen
+ * If you run from poweshell, all the logs will be outputed to console
+ * Use editor debugger
 
  
  
