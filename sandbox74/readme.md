@@ -3,8 +3,9 @@ Docker compose for sandbox php 7.4, mariadb 10.6.11
 **Prerequisite:**  
   * Git credentials should be in your user profile  
   * hosts file to have below entry   
-  127.0.0.1 sandbox.taskmasterpro.com staticsandbox.taskmasterpro.com sandbox2.taskmasterpro.com sandbox3.taskmasterpro.com
-
+  127.0.0.1 sandbox.taskmasterpro.com staticsandbox.taskmasterpro.com sandbox2.taskmasterpro.com sandbox3.taskmasterpro.com  
+  Comment the entry with sandbox you already have.
+  
 **Install steps**
 
 * Go to C:\
@@ -58,8 +59,9 @@ password <from docker-compose.yml>
  gem install bootstrap-sass  
 * Downgrade composer to 1.x  
  composer self-update --1
-* TaskMasterPro specific config changes  
-cd /var/taskmasterpro/sa
+* Copy mysql cnf file
+cd ~  
+ cp /var/taskmasterpro/sandbox/config/home/.my.cnf .my.cnf
 * You should be able to login to mysql without and credentials now  
 ![image](https://user-images.githubusercontent.com/104414289/211586181-95d2594a-b096-4a57-9cc7-d1cbf7460f19.png)  
 * Clone tmp repo in sandbox directory with gitbash  
@@ -95,6 +97,8 @@ cd /var/taskmasterpro/sa
  * From gitbash terminal, run  
  npm run dev
  ![image](https://user-images.githubusercontent.com/104414289/211796504-30bb849c-2374-47ad-bcb5-f636bfda543f.png)
+* Sandbox should be accessible on 8091 port  
+ https://sandbox.taskmasterpro.com:8091/login.php
 * To enable Xdebug 3, add the following lines at the end of 	/usr/local/etc/php/php.ini  
  xdebug.mode=develop,debug  
  xdebug.client_host=host.docker.internal
