@@ -3,8 +3,9 @@ Docker compose for sandbox php 7.4, mariadb 10.6.11
 **Prerequisite:**  
   * Git credentials should be in your user profile  
   * hosts file to have below entry   
-  127.0.0.1 sandbox.taskmasterpro.com staticsandbox.taskmasterpro.com sandbox2.taskmasterpro.com sandbox3.taskmasterpro.com
-
+  127.0.0.1 sandbox.taskmasterpro.com staticsandbox.taskmasterpro.com sandbox2.taskmasterpro.com sandbox3.taskmasterpro.com  
+  Comment the entry with sandbox you already have.
+  
 **Install steps**
 
 * Go to C:\
