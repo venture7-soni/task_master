@@ -97,6 +97,8 @@ cd ~
  * From gitbash terminal, run  
  npm run dev
  ![image](https://user-images.githubusercontent.com/104414289/211796504-30bb849c-2374-47ad-bcb5-f636bfda543f.png)
+* Sandbox should be accessible on 8091 port  
+ https://sandbox.taskmasterpro.com:8091/login.php
 * To enable Xdebug 3, add the following lines at the end of 	/usr/local/etc/php/php.ini  
  xdebug.mode=develop,debug  
  xdebug.client_host=host.docker.internal
