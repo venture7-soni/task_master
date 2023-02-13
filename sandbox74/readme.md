@@ -33,35 +33,11 @@ password <from docker-compose.yml>
   http://localhost:8081/
 * PHPinfo http://localhost:8081/phpin.php  
 * login to sandbox with your cmd using following command   
- docker exec -it sandbox bash  
-* Install mcrypt  
- pecl install mcrypt  
- docker-php-ext-enable mcrypt  
- service apache2 reload
-* Install apcu  
- pecl install apcu  
- docker-php-ext-enable apcu  
- service apache2 reload
-* Install GD  
- docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/  
- docker-php-ext-install -j$(nproc) gd
-* Install mysql client  
- apt-get install default-mysql-client  
-* Install node  
- curl -fsSL https://deb.nodesource.com/setup_19.x | bash - && apt-get -y install nodejs  
-* Install grunt  
- npm install -g grunt-cli
-* Install ruby compss sass  
- apt-get install ruby-full  
- gem install bundler  
- gem install compass  
- gem install sass  
- gem install bootstrap-sass  
-* Downgrade composer to 1.x  
- composer self-update --1
-* Copy mysql cnf file
-cd ~  
- cp /var/taskmasterpro/sandbox/config/home/.my.cnf .my.cnf
+ docker exec -it sandbox bash 
+* Copy mysql cnf file 
+  ``` 
+  cp /var/taskmasterpro/sandbox/config/home/.my.cnf ~/.my.cnf
+  ```
 * You should be able to login to mysql without and credentials now  
 ![image](https://user-images.githubusercontent.com/104414289/211586181-95d2594a-b096-4a57-9cc7-d1cbf7460f19.png)  
 * Clone tmp repo in sandbox directory with gitbash  
