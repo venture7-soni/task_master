@@ -43,6 +43,8 @@ password <from docker-compose.yml>
 * Clone tmp repo in sandbox directory with gitbash  
  git clone https://github.com/TaskMasterPro/tmp  
  ![image](https://user-images.githubusercontent.com/104414289/211746087-4d27d95a-2f9d-4c84-b00c-9110a97f1374.png)
+* If you are installing for the first time, create Dbs with this script, Run from docker sandbox bash terminal  
+  ./create_db.sh
 * Run setup.sh from docker sandbox bash  
  ./setup.sh  
  ![image](https://user-images.githubusercontent.com/104414289/211754432-afb8720a-cc41-4dd9-a74c-46c3fd0f96e3.png)  
