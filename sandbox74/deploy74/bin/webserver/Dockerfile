@@ -49,3 +49,29 @@ RUN apt-get install -y libfreetype6-dev libjpeg62-turbo-dev libpng-dev
 
 # Enable apache modules
 RUN a2enmod rewrite headers expires proxy ssl
+
+RUN yes | pecl install mcrypt
+RUN docker-php-ext-enable mcrypt
+
+RUN yes | pecl install apcu
+RUN docker-php-ext-enable apcu
+
+RUN yes | docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/
+RUN docker-php-ext-install -j$(nproc) gd
+
+RUN yes | apt-get install default-mysql-client
+
+RUN yes | curl -fsSL https://deb.nodesource.com/setup_19.x | bash - && apt-get -y install nodejs
+
+RUN yes | npm install -g grunt-cli
+
+RUN yes | apt-get install ruby-full
+RUN yes | gem install bundler
+RUN yes | gem install compass
+RUN yes | gem install sass
+RUN yes | gem install bootstrap-sass
+
+RUN yes | composer self-update --1
+
+# This fails as probably volume has not mounted as of now
+# RUN cp /var/taskmasterpro/sandbox/config/home/.my.cnf ~/.my.cnf
