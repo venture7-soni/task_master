@@ -41,39 +41,63 @@ password <from docker-compose.yml>
 * You should be able to login to mysql without and credentials now  
 ![image](https://user-images.githubusercontent.com/104414289/211586181-95d2594a-b096-4a57-9cc7-d1cbf7460f19.png)  
 * Clone tmp repo in sandbox directory with gitbash  
- git clone https://github.com/TaskMasterPro/tmp  
+  ``` 
+  git clone https://github.com/TaskMasterPro/tmp  
+  ```
  ![image](https://user-images.githubusercontent.com/104414289/211746087-4d27d95a-2f9d-4c84-b00c-9110a97f1374.png)
 * If you are installing for the first time, create Dbs with this script, Run from docker sandbox bash terminal  
+  ```
   ./create_db.sh
+  ```
 * Run setup.sh from docker sandbox bash  
- ./setup.sh  
+  ``` 
+  ./setup.sh  
+  ```
  ![image](https://user-images.githubusercontent.com/104414289/211754432-afb8720a-cc41-4dd9-a74c-46c3fd0f96e3.png)  
- This will create necessary database, database users and config.  
+ This will create necessary config.  
 * Import latest db dumps.  
  copy db dumps to sandbox folder and then do the import  
  ![image](https://user-images.githubusercontent.com/104414289/211758008-7df7b4bd-4d48-419a-a5cf-1138e4a5c257.png)  
  * TODO: Everything below should go into some local build script
  * From docker terminal, tmp folder, do npm install  
+ ```
  npm install  
+ ```
  ![image](https://user-images.githubusercontent.com/104414289/211765430-ea83a28d-ad10-46e9-b65c-27942f529637.png)
  * From docker terminal, tmp/laravel folder, do npm install  
+ ```
  npm install  
+ ```
  ![image](https://user-images.githubusercontent.com/104414289/211769241-fabef5fb-9288-4f5c-a3a5-40ff5397a9f2.png)  
  * From docker terminal, tmp/code, do composer install  
+ ``` 
  /usr/local/bin/composer install --optimize-autoloader --no-progress --no-dev  
+ ```
  ![image](https://user-images.githubusercontent.com/104414289/211790328-79008e67-46c7-4139-b17c-70e3aa90f755.png)
  * From docker terminal, tmp/laravel, do composer install  
+ ```
  /usr/local/bin/composer install --optimize-autoloader --no-progress --no-dev  
+ ```
  ![image](https://user-images.githubusercontent.com/104414289/211794748-5c0b2482-0162-4766-b075-a1860ef0c4e9.png)
  * From docker terminal, tmp/laravel, run following commands:  
-        php artisan key:generate  
-        php artisan config:cache  
-        php artisan config:clear  
+  ```      
+  php artisan key:generate  
+  ```
+  ```
+  php artisan config:cache  
+  ```
+  ``` 
+  php artisan config:clear  
+  ```
  * FROM docker terminal, tmp/, run grunt  
-   grunt compass:dev  
+  ```   
+  grunt compass:dev  
+  ```
  ![image](https://user-images.githubusercontent.com/104414289/211796052-977745f3-0977-4228-b085-e83a833a0644.png)
  * From gitbash terminal, run  
+ ``` 
  npm run dev
+ ```
  ![image](https://user-images.githubusercontent.com/104414289/211796504-30bb849c-2374-47ad-bcb5-f636bfda543f.png)
 * Sandbox should be accessible on 8091 port  
  https://sandbox.taskmasterpro.com:8091/login.php
