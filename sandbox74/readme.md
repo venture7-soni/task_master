@@ -103,7 +103,14 @@ password <from docker-compose.yml>
  https://sandbox.taskmasterpro.com:8091/login.php
 * To enable Xdebug 3, add the following lines at the end of 	/usr/local/etc/php/php.ini  
  xdebug.mode=develop,debug  
- xdebug.client_host=host.docker.internal
+ xdebug.client_host=host.docker.internal  
+
+**Adminui:** 
+* To install adminui, git clone adminui in tmp_deploy\sandbox74\sandbox\admin. 
+* Do composer install 
+* Edit .env file 
+* You should be able to access at https://admin.sandbox.taskmasterpro.com:8091/ 
+ 
 
  **Troubleshooting:**
  * If you run from containers from docker desktop, all the logs are outputed to the screen
