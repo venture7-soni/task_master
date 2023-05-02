@@ -56,6 +56,8 @@ RUN docker-php-ext-enable mcrypt
 RUN yes | pecl install apcu
 RUN docker-php-ext-enable apcu
 
+RUN docker-php-ext-install calendar
+
 RUN yes | docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/
 RUN docker-php-ext-install -j$(nproc) gd
 
