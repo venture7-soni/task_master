@@ -106,6 +106,7 @@ password <from docker-compose.yml>
  xdebug.client_host=host.docker.internal  
 
 **Adminui:** 
+* Host file shoul have the entry 127.0.0.1 admin.sandbox.taskmasterpro.com
 * To install adminui, git clone adminui in tmp_deploy\sandbox74\sandbox\admin. 
 * Do composer install 
 * Edit .env file 
